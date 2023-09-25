@@ -1,9 +1,8 @@
 import os 
 import csv
 
-
 #importing csv
-csvpath = os.path.join('Resources', 'budget_data.csv')
+csvpath = os.path.join("Resources", "budget_data.csv")
 
 #open csv
 with open(csvpath, encoding='UTF-8') as csvfile:
@@ -23,17 +22,16 @@ with open(csvpath, encoding='UTF-8') as csvfile:
 
 #loop
     for row in csvreader:
-#       print(row)
-        months = months + 1
-        total_amount = total_amount + 1
-        change = int(row[1]) - previous_amount
-        previous_amount = int(row[1])
-        total_changes.append(change)
-        greatest_increase = max(total_changes)
-        greatest_decrease = min(total_changes)
-        greatest_increase_month = total_changes.index(max(total_changes))
-        greatest_decrease_month = total_changes.index(min(total_changes))
-        total_months.append(row[0])
+      months = months + 1
+      total_amount = total_amount + 1
+      change = int(row[1]) - previous_amount
+      previous_amount = int(row[1])
+      total_changes.append(change)
+      greatest_increase = max(total_changes)
+      greatest_decrease = min(total_changes)
+      greatest_increase_month = total_changes.index(max(total_changes))
+      greatest_decrease_month = total_changes.index(min(total_changes))
+      total_months.append(row[0])
 
 print (f"Total Months: {months}")
 print (f"Total: ${total_amount}")
